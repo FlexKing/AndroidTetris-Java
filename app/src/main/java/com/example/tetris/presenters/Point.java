@@ -1,0 +1,23 @@
+package com.example.tetris.presenters;
+
+public class Point {
+    public final int x,y;
+    public boolean isFallingPoint;
+    public PointType type;
+
+    public Point(int x, int y, boolean isFallingPoint, PointType type) {
+        this.x = x;
+        this.y = y;
+        this.isFallingPoint = isFallingPoint;
+        this.type = type;
+    }
+    public Point (int x, int y){
+        this.x=x;
+        this.y=y;
+        this.isFallingPoint = false;
+        this.type=PointType.EMPTY;
+    }
+    public boolean isStablePoint(){
+        return !isFallingPoint && type == PointType.BOX;
+    }
+}
